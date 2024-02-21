@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+        <h3 class="band-name band-name-large">Amble Store</h3>
+        <nav class="main-nav nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container content-section">
+        <h2 class="section-header">MOBILES</h2>
+        <div class="shop-items hidden">
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/mob1.png">
+                <span class="shop-item-title">IQOO New7</span>
+                <span class="shop-item-title">⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.30000</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                
+                <img class="shop-item-image" src="assets/mob2.png">
+                <span class="shop-item-title">Samsung S23</span>
+                <span class="shop-item-title">⋆⋆⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.55000</span>
+                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">CLOTHES</h2>
+        <div class="shop-items hidden">
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/clo1.png">
+                <span class="shop-item-title">T-Shirt</span>
+                <span class="shop-item-title">⋆⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.999</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/clo2.png">
+                <span class="shop-item-title">T-shirt</span>
+                <span class="shop-item-title">⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.699</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">LAPTOPS</h2>
+        <div class="shop-items hidden">
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/lap1.png">
+                <span class="shop-item-title">HP</span>
+                <span class="shop-item-title">⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.55000</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/lap2.png">
+                <span class="shop-item-title">Acer</span>
+                <span class="shop-item-title">⋆⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.75000</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">WATCHES</h2>
+        <div class="shop-items hidden">
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/wat1.png">
+                <span class="shop-item-title">Fossil</span>
+                <span class="shop-item-title">⋆⋆⋆⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.5000</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img class="shop-item-image" src="assets/wat2.png">
+                <span class="shop-item-title">Realme3</span>
+                <span class="shop-item-title">⋆⋆</span>
+                <div class="shop-item-details">
+                    <span class="shop-item-price">Rs.3999</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="band-name">Amble Store</h3>
+            <p>All Rights Reserved 2023</p>
+        </div>
+    </footer>
+    <script>
+        function addToCartClicked(event) {
+    const button = event.target;
+    const shopItem = button.parentElement.parentElement;
+    const title = shopItem.querySelector('.shop-item-title').innerText;
+    const price = parseFloat(shopItem.querySelector('.shop-item-price').innerText.replace('Rs.', ''));
+    const imageSrc = shopItem.querySelector('.shop-item-image').src;
+    addItemToCart(title, price, imageSrc);
+    updateCartTotal();
+
+    // Save cart data to localStorage
+    saveCartToLocalStorage();
+}
+
+function saveCartToLocalStorage() {
+    const cartItems = document.querySelector('.cart-items').innerHTML;
+    localStorage.setItem('cartItems', cartItems);
+}
+
+        </script>
+    <script src="script.js"></script>
+    <script>
+        function addToCartClicked(event) {
+            const button = event.target;
+            const shopItem = button.parentElement.parentElement;
+            const title = shopItem.querySelector('.shop-item-title').innerText;
+            const price = parseFloat(shopItem.querySelector('.shop-item-price').innerText.replace('Rs.', ''));
+            const imageSrc = shopItem.querySelector('.shop-item-image').src;
+
+            // Get existing cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Check if the item is already in the cart
+            const existingItem = cartItems.find(item => item.title === title);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({ title, price, imageSrc, quantity: 1 });
+            }
+
+            // Save updated cart items to localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        }
+    </script>
+   
+</body>
+</html>
+
+

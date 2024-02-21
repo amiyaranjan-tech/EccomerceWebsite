@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amble Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            body {
+  margin: 0; 
+  padding: 0; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; 
+}
+
+footer {
+  background-color: #ccc; 
+  padding: 20px;
+  position: fixed; 
+  bottom: 0; 
+  width: 100%; 
+}
+
+        </style>
+    </head>
+    <body>
+        <header class="main-header">
+            <h3 class="band-name band-name-large">Amble Store</h3>
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="imageslider">
+            <button class="carousel-button prev">🢀</button>
+            <button class="carousel-button next">🢂</button>
+            <div class="slider-container">
+              <img src="assets/ban1.png" class="sliderimages slide-active">
+            </div>
+          </div>
+        <div class="gallery">
+            <div class="gallery-item">
+              <img src="assets/gal1.png" alt="Photo 1">
+              <div class="gallery-caption">photo 1</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/gal2.png" alt="Photo 2">
+              <div class="gallery-caption">photo 2</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/gal3.png" alt="Photo 3">
+              <div class="gallery-caption"> Photo 3</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/gal4.png" alt="Photo 3">
+              <div class="gallery-caption">photo 4</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/gal5.png" alt="Photo 3">
+              <div class="gallery-caption">Photo 5</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/gal6.png" alt="Photo 3">
+              <div class="gallery-caption">Photo 6</div>
+            </div>
+          </div>
+       
+        <footer class="main-footer">
+            <div class="container main-footer-container">
+                <h3 class="band-name">Amble Store</h3>
+                <p>All Rights Reserved 2023</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
